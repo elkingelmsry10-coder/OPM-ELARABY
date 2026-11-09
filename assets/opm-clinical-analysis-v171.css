@@ -1,0 +1,106 @@
+/* OPM v171: surgical visual fixes. Does not modify data, auth or connections. */
+#clinicalFollowup{min-width:0}
+#clinicalFollowup .cl141-places{margin:14px 0 18px!important;padding:18px!important;border:1px solid var(--border)!important;border-radius:17px!important;background:var(--surface)!important;box-shadow:0 5px 20px rgba(10,43,49,.035)!important}
+#clinicalFollowup .cl141-heading{margin-bottom:16px!important;padding:0 2px;align-items:center!important}
+#clinicalFollowup .cl141-heading h3{font-size:17px!important;font-weight:800;line-height:1.5;color:var(--ink)}
+#clinicalFollowup .cl141-heading p{display:block!important;font-size:11px!important;color:var(--muted)}
+#clinicalFollowup .cl141-context>span{font-size:12px;padding:7px 12px;border-radius:10px}
+#clinicalFollowup .opm171-charts{display:grid!important;grid-template-columns:minmax(250px,.85fr) minmax(0,1.3fr) minmax(0,1.3fr)!important;gap:14px!important;align-items:stretch}
+#clinicalFollowup .opm171-charts>.cl141-panel{padding:15px 14px!important;border:1px solid var(--border)!important;border-radius:14px!important;background:var(--surface-2)!important;min-width:0;box-shadow:0 2px 7px rgba(18,66,69,.025)}
+#clinicalFollowup .opm171-charts>.cl141-panel>header{margin-bottom:15px!important}
+#clinicalFollowup .opm171-charts>.cl141-panel>header h4{font-size:13px!important;font-weight:800;color:var(--ink)}
+#clinicalFollowup .opm171-charts>.cl141-panel>header small{font-size:11px!important;padding:4px 8px;border:1px solid var(--border);border-radius:8px;background:var(--surface)}
+#clinicalFollowup .opm171-total-panel{background:var(--brand-tint)!important;border-color:var(--border)!important}
+#clinicalFollowup .opm171-total-number{display:block;direction:ltr;text-align:right;font:800 clamp(24px,2vw,34px)/1.3 var(--font);font-variant-numeric:tabular-nums;color:var(--brand-ink);margin:0 0 12px}
+#clinicalFollowup .opm171-donut-panel{display:flex;flex-direction:column;align-items:center;gap:12px;flex:1;justify-content:center}
+#clinicalFollowup .opm171-total-panel .cl141-donut{width:142px!important;height:142px!important}
+#clinicalFollowup .opm171-total-panel .cl141-donut b{font-size:24px!important;font-weight:800}
+#clinicalFollowup .opm171-legend{display:grid;gap:7px;width:100%}
+#clinicalFollowup .opm171-legend>div{display:flex;align-items:center;justify-content:space-between;gap:8px;font-size:11px;color:var(--ink);border-bottom:1px solid var(--border);padding-bottom:5px}
+#clinicalFollowup .opm171-legend>div:last-child{border-bottom:0}
+#clinicalFollowup .opm171-legend span{display:inline-flex;align-items:center;gap:7px;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+#clinicalFollowup .opm171-legend i{width:9px;height:9px;border-radius:50%;display:inline-block;flex:none}
+#clinicalFollowup .opm171-legend b{font-weight:800;font-size:11px;color:var(--ink)}
+#clinicalFollowup .opm171-sites-panel .cl141-site-body{display:block!important;min-height:0!important}
+#clinicalFollowup .opm171-sites-panel .cl141-site-list{max-height:284px!important;gap:7px!important}
+#clinicalFollowup .opm171-charts .cl141-centers{max-height:284px!important;gap:7px!important}
+#clinicalFollowup .opm171-charts :is(.cl141-site,.cl141-center){border:1px solid var(--border)!important;border-radius:9px!important;background:var(--surface)!important;min-height:40px!important;padding:8px 10px!important;gap:6px 9px!important;transition:background-color .16s,border-color .16s}
+#clinicalFollowup .opm171-charts :is(.cl141-site,.cl141-center):hover,#clinicalFollowup .opm171-charts :is(.cl141-site,.cl141-center).active{border-color:var(--brand)!important;background:var(--brand-soft)!important}
+#clinicalFollowup .opm171-charts .cl141-track{height:5px!important;background:var(--surface-3)!important;border-radius:9px!important}
+#clinicalFollowup .cl141-panel-note{font-size:10.5px!important;color:var(--muted)!important}
+#clinicalFollowup .cl44-table-wrap{margin:0!important;padding:0!important;border:1px solid var(--border)!important;border-radius:15px!important;overflow:visible!important;isolation:auto!important;background:var(--surface)!important}
+#clinicalFollowup .cl142-sticky{top:12px!important;z-index:30!important;padding:12px!important;background:var(--surface)!important;border:0!important;border-bottom:1px solid var(--border)!important;border-radius:15px 15px 0 0!important;box-shadow:0 5px 18px rgba(12,41,52,.06)!important}
+#clinicalFollowup .cl44-tools{display:flex!important;flex-direction:row!important;align-items:center!important;justify-content:space-between!important;gap:14px!important;padding:0 0 12px!important;margin:0!important;background:transparent!important}
+#clinicalFollowup .cl44-tools-title{min-width:fit-content;display:flex!important;align-items:center!important;margin:0!important;gap:10px!important}
+#clinicalFollowup .cl44-tools-title b{font-size:14px!important;color:var(--ink)}
+#clinicalFollowup .cl44-tools-title span{font-size:11px!important;color:var(--brand-ink)!important;background:var(--brand-soft)!important;border-radius:9px!important;padding:5px 9px!important;white-space:nowrap}
+#clinicalFollowup .cl44-tools-row{display:grid!important;grid-template-columns:minmax(210px,360px) auto auto;align-items:center!important;gap:9px!important;flex:1;justify-content:end!important}
+#clinicalFollowup .cl139-search{display:block!important;width:100%!important;min-width:0!important;flex:1!important}
+#clinicalFollowup .cl139-search>span{position:absolute!important;width:1px!important;height:1px!important;overflow:hidden!important;clip-path:inset(50%)!important}
+#clinicalFollowup #cl44q{min-width:0!important;width:100%!important;height:44px!important;min-height:44px!important;background:var(--surface-2)!important;border:1px solid var(--border)!important;border-radius:11px!important;padding:8px 12px!important;color:var(--ink)!important;font-size:12px!important;box-shadow:none!important}
+#clinicalFollowup #cl44q:focus{border-color:var(--brand)!important;box-shadow:0 0 0 3px var(--brand-soft)!important}
+#clinicalFollowup :is(#cl44reset,#clinicalReportExport){height:44px!important;min-height:44px!important;min-width:max-content!important;padding:8px 14px!important;font-size:12px!important;font-weight:800!important;border-radius:11px!important;box-shadow:none!important;white-space:nowrap!important}
+#clinicalFollowup #cl44reset{background:var(--surface)!important;color:var(--ink)!important;border:1px solid var(--border)!important}
+#clinicalFollowup #clinicalReportExport{background:var(--brand)!important;color:var(--on-brand)!important;border:1px solid var(--brand)!important}
+#clinicalFollowup .cl142-filter-row{display:grid!important;grid-template-columns:repeat(6,minmax(0,1fr))!important;gap:9px!important;align-items:stretch!important;padding:0!important;position:relative!important}
+#clinicalFollowup .opm171-org-permanent,#clinicalFollowup #cl139Filters,#clinicalFollowup #cl139Filters>.psf-toolbar,#clinicalFollowup #cl139Filters .psf-shell,#clinicalFollowup #cl139Filters .psf-fields,#clinicalFollowup #cl139Filters .psf-multi{display:contents!important}
+#clinicalFollowup #cl139Filters .psf-brand,#clinicalFollowup #cl139Filters .psf-actions{display:none!important}
+#clinicalFollowup [data-cl142-filter],#clinicalFollowup #cl139Filters .psf-multi-trigger{width:100%!important;max-width:none!important;min-width:0!important;height:56px!important;min-height:56px!important;padding:9px 11px!important;border-radius:11px!important;border:1px solid var(--border)!important;background:var(--surface-2)!important;box-shadow:none!important;color:var(--ink)!important;text-align:right!important}
+#clinicalFollowup :is([data-cl142-filter],.psf-multi-trigger):hover,#clinicalFollowup :is([data-cl142-filter],.psf-multi-trigger).active{background:var(--brand-soft)!important;border-color:var(--brand)!important}
+#clinicalFollowup #cl139Filters .psf-multi-label,#clinicalFollowup [data-cl142-filter]>span{font-size:10px!important;color:var(--muted)!important;white-space:nowrap!important}
+#clinicalFollowup #cl139Filters .psf-multi-value,#clinicalFollowup [data-cl142-filter]>b{font-size:12px!important;font-weight:800!important;color:var(--ink)!important;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+#clinicalFollowup #cl139Filters .psf-multi-chevron{width:14px!important;height:14px!important}
+#clinicalFollowup .cl44-scroll{border-top:0!important;border-radius:0 0 14px 14px!important;scroll-padding-top:12px}
+#clinicalFollowup .cl44-scroll thead th{position:sticky;top:0;z-index:3;white-space:nowrap;background:var(--surface-2);color:var(--ink);border-bottom:1px solid var(--border);font-size:11px}
+#clinicalFollowup .cl44-scroll tbody tr:hover td{background:var(--brand-tint)}
+/* Analysis palette: use shared tokens instead of independent teal/green surfaces, including dark mode. */
+#v50AnalysisShell.opm-v165{--opm165-paper:var(--surface);--opm165-soft:var(--surface-2);--opm165-ink:var(--ink);--opm165-muted:var(--muted);--opm165-line:var(--border);--opm165-tint:var(--brand-soft);--opm165-teal:var(--brand-ink)}
+#v50AnalysisShell.opm-v165 .opm165-target-metric{background:var(--brand)!important;border-color:var(--brand)!important}
+#v50AnalysisShell.opm-v165 .opm165-target-metric .v91-stat,#v50AnalysisShell.opm-v165 .opm165-target-metric .v91-stat.active{color:var(--on-brand)!important}
+#v50AnalysisShell.opm-v165 .opm165-target-metric :is(.opm-metric-heading,.opm-metric-heading svg,[data-v91-stat],.opm-metric-heading span){color:var(--on-brand)!important}
+#v50AnalysisShell.opm-v165 .opm165-target-metric .opm165-distribution{background:color-mix(in srgb,var(--on-brand) 15%,transparent)!important}
+#v50AnalysisShell.opm-v165 .opm165-target-metric .opm165-distribution i{background:color-mix(in srgb,var(--on-brand) 68%,transparent)!important}
+#v50AnalysisShell.opm-v165 .opm165-target-metric .opm165-distribution i:nth-child(2){background:var(--on-brand)!important}
+#v50AnalysisShell.opm-v165 .opm156-grade-card.has-selected{border-color:var(--brand)!important}
+#v50AnalysisShell.opm-v165 #opm156GradeSelectAll{border-color:var(--border)!important}
+#v50AnalysisShell.opm-v165 .opm165-excl-head{padding-bottom:11px!important;margin-bottom:12px!important;align-items:center!important;gap:8px 14px!important;flex-wrap:wrap!important}
+#v50AnalysisShell.opm-v165 .opm171-exclusion-head-actions{display:flex;align-items:center;justify-content:flex-end;gap:8px;flex-wrap:wrap;min-width:0;max-width:100%}
+#v50AnalysisShell.opm-v165 .opm171-exclusion-head-actions b{font-size:10px!important;white-space:nowrap!important;max-width:100%}
+#v50AnalysisShell.opm-v165 .opm171-exclusion-head-actions button{display:inline-flex!important;align-items:center;justify-content:center;min-height:32px!important;padding:6px 12px!important;border:1px solid var(--border)!important;border-radius:9px!important;background:var(--surface-2)!important;color:var(--ink)!important;font:700 11px/1.5 var(--font)!important;white-space:nowrap;box-shadow:none!important;cursor:pointer}
+#v50AnalysisShell.opm-v165 .opm171-exclusion-head-actions button:hover{border-color:var(--brand)!important;background:var(--brand-soft)!important}
+#v50AnalysisShell.opm-v165 #opm156GradeSelectAll{color:var(--brand-ink)!important;background:var(--brand-soft)!important}
+#v50AnalysisShell.opm-v165 .opm156-grade-groups{margin-top:0!important}
+@media(max-width:1350px){#clinicalFollowup .opm171-charts{grid-template-columns:minmax(230px,.85fr) repeat(2,minmax(0,1fr))!important}#clinicalFollowup .cl142-filter-row{grid-template-columns:repeat(3,minmax(0,1fr))!important}#clinicalFollowup .opm171-total-panel .cl141-donut{width:125px!important;height:125px!important}}
+@media(max-width:950px){#clinicalFollowup .opm171-charts{grid-template-columns:repeat(2,minmax(0,1fr))!important}#clinicalFollowup .opm171-total-panel{grid-column:1/-1}#clinicalFollowup .opm171-donut-panel{flex-direction:row}#clinicalFollowup .opm171-charts .cl141-panel{min-height:200px}#clinicalFollowup .cl44-tools{flex-direction:column!important;align-items:stretch!important}#clinicalFollowup .cl44-tools-title{justify-content:space-between!important}#clinicalFollowup .cl44-tools-row{grid-template-columns:minmax(0,1fr) auto auto!important}#clinicalFollowup .cl142-sticky{top:4px!important}}
+@media(max-width:600px){#clinicalFollowup .cl141-places{padding:12px!important}#clinicalFollowup .opm171-charts{grid-template-columns:1fr!important}#clinicalFollowup .opm171-total-panel{grid-column:auto}#clinicalFollowup .cl142-filter-row{grid-template-columns:repeat(2,minmax(0,1fr))!important}#clinicalFollowup #cl44q{height:40px!important;min-height:40px!important}#clinicalFollowup :is(#cl44reset,#clinicalReportExport){height:40px!important;min-height:40px!important;padding:6px 10px!important;font-size:11px!important}#clinicalFollowup .cl44-tools-row{grid-template-columns:minmax(0,1fr) auto auto!important;gap:6px!important}#clinicalFollowup .cl44-tools-title b{font-size:12px!important}#v50AnalysisShell.opm-v165 .opm171-exclusion-head-actions{justify-content:flex-start}#v50AnalysisShell.opm-v165 .opm171-exclusion-head-actions button{padding:5px 7px!important;font-size:10px!important}}
+@media print{#clinicalFollowup .cl142-sticky{position:static!important}#clinicalFollowup #cl139Filters .psf-brand,#clinicalFollowup #cl139Filters .psf-actions{display:none!important}}
+/* Exact dark-mode precedence: the shared design system owns every surface. */
+html[data-theme="dark"] #v50AnalysisShell.opm-v165,
+body[data-theme="dark"] #v50AnalysisShell.opm-v165,
+html.dark #v50AnalysisShell.opm-v165,
+body.dark #v50AnalysisShell.opm-v165{
+ --opm165-paper:var(--surface);--opm165-soft:var(--surface-2);
+ --opm165-ink:var(--ink);--opm165-muted:var(--muted);
+ --opm165-line:var(--border);--opm165-tint:var(--brand-soft);
+ --opm165-teal:var(--brand-ink);
+}
+html[data-theme="dark"] #v50AnalysisShell.opm-v165 .v50-sync.is-warning{color:var(--warn)!important}
+/* Header actions override an older direct-child grid rule. Keep actions in one compact line. */
+#v50AnalysisShell.opm-v165 .opm165-excl-head>.opm171-exclusion-head-actions{
+ display:flex!important;flex-direction:row!important;flex-wrap:nowrap!important;
+ align-items:center!important;justify-content:flex-end!important;gap:8px!important;
+ width:auto!important;flex:0 1 auto!important;min-width:0!important;
+}
+#v50AnalysisShell.opm-v165 .opm171-exclusion-head-actions>[data-combined-summary="grade"]{
+ display:inline-flex!important;align-items:center!important;justify-content:center!important;
+ flex:0 0 auto!important;margin:0!important;
+}
+@media(max-width:600px){#v50AnalysisShell.opm-v165 .opm165-excl-head>.opm171-exclusion-head-actions{flex-wrap:wrap!important;justify-content:flex-start!important}}
+/* In dark mode, use a quiet highlighted metric card rather than a bright solid block. */
+html[data-theme="dark"] #v50AnalysisShell.opm-v165 .opm165-target-metric{
+ background:var(--brand-soft)!important;border-color:var(--brand)!important;
+}
+html[data-theme="dark"] #v50AnalysisShell.opm-v165 .opm165-target-metric .v91-stat,
+html[data-theme="dark"] #v50AnalysisShell.opm-v165 .opm165-target-metric .v91-stat.active,
+html[data-theme="dark"] #v50AnalysisShell.opm-v165 .opm165-target-metric [data-v91-stat]{color:var(--ink)!important}
+html[data-theme="dark"] #v50AnalysisShell.opm-v165 .opm165-target-metric :is(.opm-metric-heading,.opm-metric-heading svg,.opm-metric-heading span){color:var(--brand-ink)!important}

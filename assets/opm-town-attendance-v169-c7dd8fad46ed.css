@@ -1,0 +1,30 @@
+/* OPM 167: compact source-change clock + attached region choices. */
+#dualRefreshBar #attendanceSourceClock{display:inline-flex!important;align-items:center!important;gap:5px!important;white-space:nowrap!important;min-width:0!important;max-width:100%!important;flex:0 1 auto!important;padding:0 7px!important;overflow:visible!important;font-size:10px!important;line-height:1.5!important;direction:rtl!important}
+#attendanceSourceClock>strong{font-size:10px!important;line-height:1.5!important;white-space:nowrap!important;letter-spacing:0!important;font-weight:750!important;color:var(--brand-ink,#11695a)!important;unicode-bidi:plaintext!important}
+#attendanceSourceClock[data-state="waiting"]>strong{color:var(--muted,#647b85)!important}
+#attendanceSourceClock .attendance-clock-dot{flex:0 0 6px!important}
+#regionalSwitcher .regional-choice[data-region="بنها_قليوب"]{display:inline-flex!important;align-items:center;justify-content:center;gap:5px;white-space:nowrap;position:relative}
+#regionalSwitcher .opm-town-caret{font-size:14px;line-height:1;opacity:.7;transition:transform .18s ease}
+#regionalSwitcher [aria-expanded="true"] .opm-town-caret{transform:rotate(180deg)}
+.opm-town-popover{position:fixed;z-index:2147483000!important;box-sizing:border-box;padding:6px;border:1px solid var(--border,#d7e4e0);border-radius:11px;background:var(--surface,#fff);box-shadow:0 12px 30px rgba(9,55,49,.15);opacity:0;transform:translateY(-4px) scale(.985);transition:opacity .16s ease,transform .16s ease;direction:rtl;text-align:right}
+.opm-town-popover[hidden]{display:none!important}
+.opm-town-popover.is-open{opacity:1;transform:translateY(0) scale(1)}
+.opm-town-title{font-size:10px;font-weight:700;color:var(--muted,#6b817a);padding:5px 9px 7px;border-bottom:1px solid var(--border,#e1e9e7);margin-bottom:4px;white-space:nowrap}
+.opm-town-popover button{appearance:none;width:100%;border:0!important;display:flex;align-items:center;justify-content:space-between;gap:8px;min-height:34px;border-radius:7px;background:transparent!important;color:var(--ink,#203c35)!important;font-family:inherit;font-weight:700;font-size:11px!important;white-space:nowrap;padding:7px 9px!important;box-shadow:none!important;cursor:pointer}
+.opm-town-popover button:hover,.opm-town-popover button.selected{background:var(--brand-soft,#e6f5f0)!important;color:var(--brand-ink,#076852)!important}
+.opm-town-popover button span{opacity:0;color:var(--brand,#008a6a);font-weight:800}
+.opm-town-popover button.selected span{opacity:1}
+.opm-town-popover button:focus-visible{outline:2px solid var(--brand,#008a6a)!important;outline-offset:-2px}
+@media(max-width:700px){#dualRefreshBar #attendanceSourceClock{padding:0 3px!important;gap:4px!important}#attendanceSourceClock>strong{font-size:9px!important}#regionalSwitcher .regional-choice[data-region="بنها_قليوب"]{font-size:11px!important;gap:2px}}
+@media(prefers-reduced-motion:reduce){.opm-town-popover,#regionalSwitcher .opm-town-caret{transition:none}}
+
+/* Reserve a temporary opening lane below the region selector so a visible popover never covers the next block of text. */
+#initiativeSwitcher:has(#regionalSwitcher [aria-expanded="true"]){padding-bottom:158px!important;transition:padding-bottom .16s ease}
+@media(prefers-reduced-motion:reduce){#initiativeSwitcher:has(#regionalSwitcher [aria-expanded="true"]){transition:none}}
+#banhaQalyoubSubFilter{display:none!important}
+
+/* v168: SVG arrow aligned with label, independent of system font glyph. */
+#regionalSwitcher .opm-town-caret,.regional-choice[data-region="بنها_قليوب"] .opm-town-caret{display:inline-flex!important;vertical-align:middle;justify-content:center;align-items:center;width:12px;height:12px;flex:0 0 12px;font-size:0!important;line-height:0!important;opacity:.82;transform-origin:center;transition:transform .16s ease}
+#regionalSwitcher .opm-town-caret svg,.regional-choice[data-region="بنها_قليوب"] .opm-town-caret svg{display:block!important;width:12px;height:12px;flex:0 0 12px}
+.regional-choice[data-region="بنها_قليوب"]{display:inline-flex;align-items:center;justify-content:center;gap:5px;white-space:nowrap}
+.regional-choice[data-region="بنها_قليوب"][aria-expanded="true"] .opm-town-caret{transform:rotate(180deg)}

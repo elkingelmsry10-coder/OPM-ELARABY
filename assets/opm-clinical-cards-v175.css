@@ -1,0 +1,182 @@
+/* v175: clinical cards only. Data, sources, authentication and synchronization are untouched.
+   Medical SVGs are inline and do not make network requests. */
+#clinicalFollowup .cl90-fx-grid,
+#clinicalFollowup .cl90-fx-grid *{box-sizing:border-box}
+#clinicalFollowup .fx-grid.cl90-fx-grid{
+  display:grid!important;grid-template-columns:repeat(6,minmax(0,1fr))!important;
+  gap:11px!important;direction:rtl;margin:10px 0 17px!important;
+}
+#clinicalFollowup .cl90-fx-grid>.opm175-clinical-card{
+  --opm175-accent:#36beac;--opm175-rgb:54,190,172;
+  display:flex!important;flex-direction:column!important;position:relative!important;
+  isolation:isolate;justify-content:space-between!important;align-items:stretch!important;
+  gap:10px!important;min-width:0!important;min-height:193px!important;
+  padding:14px 13px 17px!important;overflow:hidden!important;
+  border:1px solid var(--border)!important;border-radius:16px!important;
+  background:linear-gradient(160deg,var(--surface) 5%,var(--surface-2) 130%)!important;
+  color:var(--ink)!important;box-shadow:0 2px 9px rgba(0,24,38,.045)!important;
+  cursor:pointer;text-align:right;transition:transform .24s ease,border-color .24s ease,box-shadow .24s ease,background-color .24s ease!important;
+}
+#clinicalFollowup .cl90-fx-grid>.opm175-clinical-card.fx-cyan{--opm175-accent:#32c7a1;--opm175-rgb:50,199,161}
+#clinicalFollowup .cl90-fx-grid>.opm175-clinical-card.fx-violet{--opm175-accent:#ab91e8;--opm175-rgb:171,145,232}
+#clinicalFollowup .cl90-fx-grid>.opm175-clinical-card.fx-rose{--opm175-accent:#e58bab;--opm175-rgb:229,139,171}
+#clinicalFollowup .cl90-fx-grid>.opm175-clinical-card.fx-sky{--opm175-accent:#69b8ef;--opm175-rgb:105,184,239}
+#clinicalFollowup .cl90-fx-grid>.opm175-clinical-card.fx-amber{--opm175-accent:#e5aa54;--opm175-rgb:229,170,84}
+#clinicalFollowup .cl90-fx-grid>.opm175-clinical-card.fx-mint{--opm175-accent:#42cbb7;--opm175-rgb:66,203,183}
+#clinicalFollowup .cl90-fx-grid>.opm175-clinical-card::before{
+ content:"";position:absolute;inset:auto -8% -24px;z-index:-1;height:64px;
+ background:radial-gradient(ellipse at 45% 100%,rgba(var(--opm175-rgb),.105),transparent 78%);
+ pointer-events:none;
+}
+#clinicalFollowup .cl90-fx-grid>.opm175-clinical-card::after{
+ content:"";position:absolute;bottom:0;left:14px;right:14px;height:2px;z-index:1;
+ background:linear-gradient(90deg,transparent,rgba(var(--opm175-rgb),.56),transparent);opacity:.65;
+ pointer-events:none;
+}
+#clinicalFollowup .opm175-clinical-card:hover{
+ transform:translateY(-3px)!important;border-color:rgba(var(--opm175-rgb),.67)!important;
+ box-shadow:0 8px 20px rgba(2,32,45,.1),inset 0 -2px rgba(var(--opm175-rgb),.35)!important;
+}
+#clinicalFollowup .cl90-fx-grid>.opm175-clinical-card.active{
+ border:1.5px solid var(--opm175-accent)!important;
+ box-shadow:0 0 0 1px rgba(var(--opm175-rgb),.12),0 5px 20px rgba(var(--opm175-rgb),.08)!important;
+ background:linear-gradient(155deg,rgba(var(--opm175-rgb),.085),var(--surface) 54%,var(--surface-2))!important;
+}
+#clinicalFollowup .opm175-clinical-card:focus-visible{
+ outline:2px solid var(--opm175-accent)!important;outline-offset:3px!important;
+}
+#clinicalFollowup .opm175-clinical-card .opm166-clinical-heading{
+ display:flex!important;flex-direction:row!important;align-items:center!important;
+ justify-content:flex-start!important;gap:9px!important;min-height:57px!important;min-width:0!important;
+ position:relative;z-index:2;margin:0!important;
+}
+#clinicalFollowup .opm175-clinical-card .opm166-clinical-title{
+ flex:1;min-width:0;display:block!important;max-width:100%!important;
+ color:var(--ink)!important;font-family:inherit!important;font-weight:850!important;
+ font-size:clamp(12px,1.12vw,16.5px)!important;line-height:1.55!important;
+ white-space:normal!important;word-break:normal;overflow-wrap:normal!important;text-wrap:balance;
+}
+#clinicalFollowup .opm175-clinical-card .opm166-clinical-icon{
+ display:grid!important;place-items:center!important;position:relative;isolation:isolate;
+ flex:0 0 51px!important;width:51px!important;height:51px!important;
+ color:var(--opm175-accent)!important;
+ background:radial-gradient(circle at 38% 32%,rgba(var(--opm175-rgb),.16),rgba(var(--opm175-rgb),.035) 80%)!important;
+ border:1px solid rgba(var(--opm175-rgb),.2)!important;border-radius:15px!important;
+ box-shadow:inset 0 1px rgba(255,255,255,.03)!important;
+}
+#clinicalFollowup .opm175-clinical-card .opm166-clinical-icon::before{
+ content:"";position:absolute;inset:-5px;border-radius:19px;
+ border:1px solid rgba(var(--opm175-rgb),.19);opacity:.55;transform:scale(.97);
+ animation:opm175-medical-aura 5.4s ease-in-out infinite;pointer-events:none;
+}
+#clinicalFollowup .opm175-clinical-card .opm166-clinical-icon svg{
+ width:34px!important;height:34px!important;display:block!important;
+ stroke:currentColor!important;filter:drop-shadow(0 0 5px rgba(var(--opm175-rgb),.12));
+ animation:opm175-medical-float 5.4s ease-in-out infinite;
+}
+#clinicalFollowup .opm175-clinical-card .opm175-icon-detail{opacity:.63}
+#clinicalFollowup .opm175-clinical-card:nth-child(2n) .opm166-clinical-icon svg{animation-delay:-1.8s}
+#clinicalFollowup .opm175-clinical-card:nth-child(3n) .opm166-clinical-icon svg{animation-delay:-3.2s}
+#clinicalFollowup .opm175-clinical-card .opm166-clinical-data{
+ display:flex!important;flex-direction:row!important;align-items:center!important;
+ justify-content:space-between!important;gap:8px!important;z-index:2;position:relative;
+ min-width:0!important;min-height:76px!important;padding:1px 0 7px;
+}
+#clinicalFollowup .opm175-clinical-card .opm166-clinical-total{
+ flex:1 1 auto;min-width:0;color:var(--ink)!important;
+ font-size:clamp(23px,2.35vw,40px)!important;line-height:1.1!important;
+ font-weight:900!important;letter-spacing:-.4px!important;
+ white-space:nowrap!important;font-variant-numeric:tabular-nums;text-align:right;
+}
+#clinicalFollowup .opm175-clinical-card .opm166-clinical-progress{
+ position:relative!important;flex:0 0 69px!important;width:69px!important;height:69px!important;
+ color:var(--opm175-accent)!important;
+}
+#clinicalFollowup .opm175-clinical-card .opm166-clinical-progress svg{
+ width:100%!important;height:100%!important;transform:rotate(0);overflow:visible;
+}
+#clinicalFollowup .opm175-clinical-card .opm166-ring-track{
+ stroke:var(--border-2,#263c47)!important;stroke-width:9!important;
+}
+#clinicalFollowup .opm175-clinical-card .opm166-ring-fill{
+ stroke:var(--opm175-accent)!important;stroke-width:9!important;
+ filter:drop-shadow(0 0 1.5px rgba(var(--opm175-rgb),.24));
+}
+#clinicalFollowup .opm175-clinical-card .opm166-clinical-progress b{
+ color:var(--ink)!important;font-size:clamp(12px,1.13vw,17px)!important;font-weight:850!important;
+}
+#clinicalFollowup .opm175-clinical-card .opm175-medical-wave{
+ position:absolute;z-index:0;bottom:0;left:0;right:0;width:100%;height:29px;
+ pointer-events:none;opacity:.45;color:var(--opm175-accent)!important;
+}
+#clinicalFollowup .opm175-clinical-card .opm175-medical-wave path{
+ fill:none;stroke:currentColor;stroke-width:1.35;stroke-opacity:.56;stroke-linecap:round;stroke-linejoin:round;
+ stroke-dasharray:255 45;animation:opm175-wave-trace 9s linear infinite;
+}
+/* Only actual status filters; the main card already represents all statuses for that examination. */
+#clinicalFollowup .cl90-stage-ribbon.opm175-status-ribbon{
+ display:grid!important;grid-template-columns:repeat(7,minmax(0,1fr))!important;
+ gap:7px!important;min-width:0!important;align-items:stretch!important;
+ margin:0 0 14px!important;padding:10px!important;
+ border:1px solid var(--border)!important;border-radius:14px!important;
+ background:var(--surface-2)!important;overflow:visible!important;
+}
+#clinicalFollowup .opm175-status-ribbon .cl90-stage-pill{
+ min-width:0!important;min-height:38px!important;padding:7px 8px!important;
+ display:flex!important;flex-direction:row!important;justify-content:center!important;
+ align-items:center!important;flex-wrap:wrap!important;gap:5px!important;
+ border:1px solid var(--border)!important;border-radius:9px!important;
+ background:var(--surface)!important;box-shadow:none!important;
+ font:750 11px/1.55 var(--font)!important;color:var(--ink-2)!important;
+ text-align:center;transition:background-color .2s ease,border-color .2s ease,transform .2s ease!important;
+}
+#clinicalFollowup .opm175-status-ribbon .cl90-stage-pill:is(:hover,:focus-visible){
+ border-color:var(--brand)!important;background:var(--brand-soft)!important;
+}
+#clinicalFollowup .opm175-status-ribbon .cl90-stage-pill.active{
+ color:var(--on-brand)!important;background:var(--brand)!important;border-color:var(--brand)!important;
+ box-shadow:0 2px 6px rgba(5,80,74,.12)!important;
+}
+#clinicalFollowup .opm175-status-ribbon .cl90-stage-pill b{font-size:12px!important;line-height:1.3;font-variant-numeric:tabular-nums}
+#clinicalFollowup .opm175-status-ribbon .cl90-stage-pill small{display:none!important}
+@keyframes opm175-medical-float{0%,100%{transform:translateY(0)}48%{transform:translateY(-2px)}}
+@keyframes opm175-medical-aura{0%,100%{opacity:.2;transform:scale(.94)}50%{opacity:.56;transform:scale(1.035)}}
+@keyframes opm175-wave-trace{to{stroke-dashoffset:-300}}
+@media (max-width:1399px){
+ #clinicalFollowup .fx-grid.cl90-fx-grid{grid-template-columns:repeat(3,minmax(0,1fr))!important}
+ #clinicalFollowup .cl90-fx-grid>.opm175-clinical-card{min-height:163px!important;gap:7px!important}
+ #clinicalFollowup .opm175-status-ribbon{grid-template-columns:repeat(4,minmax(0,1fr))!important}
+}
+@media (min-width:1300px) and (max-width:1399px){
+ #clinicalFollowup .fx-grid.cl90-fx-grid{grid-template-columns:repeat(6,minmax(0,1fr))!important}
+ #clinicalFollowup .cl90-fx-grid>.opm175-clinical-card{padding:11px 9px 15px!important;min-height:176px!important}
+ #clinicalFollowup .opm175-clinical-card .opm166-clinical-icon{flex-basis:44px!important;width:44px!important;height:44px!important}
+ #clinicalFollowup .opm175-clinical-card .opm166-clinical-icon svg{width:29px!important;height:29px!important}
+ #clinicalFollowup .opm175-clinical-card .opm166-clinical-progress{width:58px!important;height:58px!important;flex-basis:58px!important}
+}
+@media (max-width:699px){
+ #clinicalFollowup .fx-grid.cl90-fx-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:8px!important}
+ #clinicalFollowup .cl90-fx-grid>.opm175-clinical-card{min-height:150px!important;padding:10px 9px 12px!important}
+ #clinicalFollowup .opm175-clinical-card .opm166-clinical-heading{gap:5px!important;min-height:42px!important}
+ #clinicalFollowup .opm175-clinical-card .opm166-clinical-icon{flex-basis:38px!important;width:38px!important;height:38px!important;border-radius:10px!important}
+ #clinicalFollowup .opm175-clinical-card .opm166-clinical-icon svg{width:25px!important;height:25px!important}
+ #clinicalFollowup .opm175-clinical-card .opm166-clinical-title{font-size:clamp(10px,3vw,13px)!important}
+ #clinicalFollowup .opm175-clinical-card .opm166-clinical-data{gap:6px!important;min-height:60px!important}
+ #clinicalFollowup .opm175-clinical-card .opm166-clinical-total{font-size:clamp(19px,5vw,29px)!important}
+ #clinicalFollowup .opm175-clinical-card .opm166-clinical-progress{width:51px!important;height:51px!important;flex-basis:51px!important}
+ #clinicalFollowup .opm175-clinical-card .opm166-clinical-progress b{font-size:11px!important}
+ #clinicalFollowup .opm175-status-ribbon{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+}
+@media (max-width:355px){
+ #clinicalFollowup .opm175-clinical-card .opm166-clinical-icon{flex:0 0 32px!important;width:32px!important;height:32px!important}
+ #clinicalFollowup .opm175-clinical-card .opm166-clinical-icon svg{width:22px!important;height:22px!important}
+ #clinicalFollowup .opm175-clinical-card .opm166-clinical-total{font-size:19px!important}
+ #clinicalFollowup .opm175-clinical-card .opm166-clinical-progress{width:42px!important;height:42px!important;flex-basis:42px!important}
+}
+@media (prefers-reduced-motion:reduce){
+ #clinicalFollowup .opm175-clinical-card .opm166-clinical-icon::before,
+ #clinicalFollowup .opm175-clinical-card .opm166-clinical-icon svg,
+ #clinicalFollowup .opm175-clinical-card .opm175-medical-wave path{animation:none!important}
+ #clinicalFollowup .cl90-fx-grid>.opm175-clinical-card,
+ #clinicalFollowup .opm175-status-ribbon .cl90-stage-pill{transition:none!important}
+}

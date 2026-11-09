@@ -1,0 +1,316 @@
+/* OPM V181 – Laboratory registration comparison only. Pure presentation layer.
+   Existing filters, counts, source read, cache, event handlers and exports are untouched. */
+#dailyLabDashboard .opm184-lab-comparison{
+  --v181-ink:#162532;--v181-muted:#677987;--v181-edge:#dce5ed;--v181-plate:#fff;
+  --v181-subtle:#f6f9fb;--v181-teal:#11887c;
+  direction:rtl!important;box-sizing:border-box!important;
+  margin:4px 0 16px!important;padding:8px 2px 10px!important;
+  background:transparent!important;border:0!important;box-shadow:none!important;
+  font-family:Cairo,"Segoe UI",Tahoma,sans-serif!important;color:var(--v181-ink)!important;
+}
+#dailyLabDashboard .opm184-overview{display:grid!important;grid-template-columns:minmax(220px,1.12fr) minmax(270px,1fr) minmax(210px,.95fr);align-items:center!important;gap:18px!important;min-height:84px;margin:0 0 20px;padding:0 14px!important;background:transparent!important;border:0!important;box-shadow:none!important}
+#dailyLabDashboard .opm184-overview-title{display:flex;align-items:center;gap:13px;min-width:0;text-align:right}
+#dailyLabDashboard .opm184-overview-title h3{font:800 clamp(16px,1.35vw,22px)/1.5 Cairo,"Segoe UI",sans-serif!important;color:var(--v181-ink)!important;margin:0!important;white-space:nowrap}
+#dailyLabDashboard .opm184-overview-title p{font:500 clamp(10px,.85vw,12px)/1.6 Cairo,"Segoe UI",sans-serif!important;color:var(--v181-muted)!important;margin:1px 0 0!important;white-space:nowrap}
+#dailyLabDashboard .opm184-title-mark{width:39px;height:39px;flex:none;border-radius:12px;background:#e5f4f0;color:#138b7e;display:grid;place-items:center}
+#dailyLabDashboard .opm184-overview-types{justify-self:center;min-width:0}
+#dailyLabDashboard .opm184-overview-types .gs45-types{display:flex!important;align-items:center;justify-content:center;flex-wrap:nowrap!important;gap:5px!important;min-width:0;direction:ltr!important}
+#dailyLabDashboard .opm184-overview-types .gs40-type{height:36px!important;min-height:36px!important;padding:5px 12px!important;min-width:54px!important;white-space:nowrap!important;border:1px solid #d7e0e8!important;border-radius:21px!important;color:#263d4d!important;background:#fff!important;font:700 11px/1 Cairo,"Segoe UI",sans-serif!important;box-shadow:none!important;transition:background .18s,border-color .18s,transform .18s!important;outline-offset:2px!important}
+#dailyLabDashboard .opm184-overview-types .gs40-type:hover{border-color:#71bfb6!important;background:#f1faf8!important;transform:translateY(-1px)!important}
+#dailyLabDashboard .opm184-overview-types .gs40-type.active{color:white!important;background:#128a80!important;border-color:#128a80!important;box-shadow:0 2px 6px #128a801f!important}
+#dailyLabDashboard .opm184-overview-types .gs40-type.active:after{content:'✓';margin-inline-start:5px;font:bold 12px "Segoe UI",sans-serif}
+#dailyLabDashboard .opm184-overview-info{justify-self:end;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:7px;min-width:0;padding-inline-start:13px;border-inline-start:1px solid #e1e8ee!important;color:var(--v181-muted);white-space:nowrap}
+#dailyLabDashboard .opm184-availability{display:inline-flex;align-items:center;gap:7px;min-width:0;border-radius:22px;background:#eaf3fa;color:#3f6175;padding:5px 10px;font:700 10.3px/1.5 Cairo,"Segoe UI",sans-serif!important}
+#dailyLabDashboard .opm184-info-dot{width:6px;height:6px;border-radius:50%;background:#149a8e;box-shadow:0 0 0 3px #149a8e1c;flex:none}
+#dailyLabDashboard .opm184-overview-info .lab58-showing{font:600 clamp(10px,.78vw,12px)/1.6 Cairo,"Segoe UI",sans-serif!important;color:var(--v181-muted)!important;white-space:nowrap!important}
+#dailyLabDashboard .opm184-overview-info .lab58-showing b{font-size:1.12em!important;color:#203a4c!important;font-variant-numeric:tabular-nums!important}
+#dailyLabDashboard .opm184-status-panel{margin:0!important;min-width:0}
+#dailyLabDashboard .opm184-card-grid{
+  direction:rtl!important;display:grid!important;
+  grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,1.25fr) minmax(0,1fr) minmax(0,1.08fr)!important;
+  gap:0!important;align-items:stretch!important;isolation:isolate;
+  border:1px solid var(--v181-edge)!important;border-radius:22px!important;
+  background:var(--v181-plate)!important;
+  box-shadow:0 7px 23px rgba(26,55,76,.075)!important;
+  overflow:hidden!important;
+}
+#dailyLabDashboard .opm184-card-grid article.opm184-status-card{
+  --c:#168f7d;--v181-tint:#f3faf8;
+  position:relative!important;min-width:0!important;min-height:208px!important;
+  border:0!important;border-inline-end:1px solid var(--v181-edge)!important;
+  border-radius:0!important;margin:0!important;padding:0!important;
+  background:linear-gradient(180deg,var(--v181-tint) 0%,var(--v181-plate) 56%)!important;
+  box-shadow:none!important;overflow:hidden!important;
+  cursor:default!important;display:flex!important;flex-direction:column!important;
+  transition:background .24s ease,box-shadow .24s ease!important;
+  animation:opm184-card-in .38s both ease-out;
+}
+#dailyLabDashboard .opm184-card-grid article.opm184-status-card:nth-child(2){animation-delay:.035s}
+#dailyLabDashboard .opm184-card-grid article.opm184-status-card:nth-child(3){animation-delay:.07s}
+#dailyLabDashboard .opm184-card-grid article.opm184-status-card:nth-child(4){animation-delay:.105s}
+#dailyLabDashboard .opm184-card-grid article.opm184-status-card:nth-child(5){animation-delay:.14s}
+#dailyLabDashboard .opm184-card-grid article.opm184-status-card{grid-column:auto!important;grid-row:auto!important}
+#dailyLabDashboard .opm184-card-grid article.opm184-status-card:last-child{border-inline-end:0!important}
+#dailyLabDashboard .opm184-card-grid article.opm153-tone-all{--c:#229e83;--v181-tint:#f2faf7}
+#dailyLabDashboard .opm184-card-grid article.opm153-tone-excelOnly{--c:#d97b7e;--v181-tint:#fdf6f6}
+#dailyLabDashboard .opm184-card-grid article.opm153-tone-matchedAny{--c:#50aeb3;--v181-tint:#f1f9fa}
+#dailyLabDashboard .opm184-card-grid article.opm153-tone-labOnly{--c:#729cbc;--v181-tint:#f4f8fc}
+#dailyLabDashboard .opm184-card-grid article.opm153-tone-pending{--c:#e8b25e;--v181-tint:#fffaf3}
+#dailyLabDashboard .opm184-card-grid article.opm184-status-card::before{content:""!important;position:absolute!important;inset:0 0 auto!important;right:0!important;left:0!important;width:100%!important;height:4px!important;background:var(--c)!important;border:0!important;border-radius:0!important;opacity:1!important;box-shadow:none!important;transform:none!important;z-index:2}
+#dailyLabDashboard .opm184-card-grid article.opm184-status-card:hover{box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--c) 43%,transparent)!important;background:linear-gradient(180deg,var(--v181-tint),var(--v181-plate) 70%)!important}
+#dailyLabDashboard .opm184-card-grid article.opm184-status-card.is-selected{box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--c) 40%,transparent)!important}
+#dailyLabDashboard .opm184-card-grid .opm184-main{box-sizing:border-box;display:flex!important;flex-direction:column!important;align-items:stretch!important;gap:0!important;flex:1 1 auto!important;min-height:151px!important;padding:22px 13px 6px!important;background:transparent!important;color:var(--v181-ink)!important;box-shadow:none!important;outline-offset:-3px!important;text-align:center!important;transform:none!important;transition:background .18s ease!important;cursor:pointer!important}
+#dailyLabDashboard .opm184-card-grid .opm184-main:hover{background:#ffffff3d!important}
+#dailyLabDashboard .opm184-card-heading{display:flex!important;align-items:center!important;justify-content:center!important;gap:9px!important;min-height:37px!important;direction:rtl!important;white-space:nowrap!important}
+#dailyLabDashboard .opm184-card-heading .opm153-card-title{font:800 clamp(11px,1.06vw,14px)/1.5 Cairo,"Segoe UI",sans-serif!important;color:var(--v181-ink)!important;white-space:nowrap!important}
+#dailyLabDashboard .opm184-icon{display:grid;place-items:center;width:30px;height:30px;min-width:30px;max-width:30px;border-radius:10px;color:var(--c);background:color-mix(in srgb,var(--c) 12%,#fff);flex:none;transition:transform .2s ease!important}
+#dailyLabDashboard .opm184-card-grid article:hover .opm184-icon{transform:translateY(-2px)!important}
+#dailyLabDashboard .opm184-card-grid .opm153-card-metric{display:flex!important;align-items:baseline!important;justify-content:center!important;flex-direction:column!important;gap:0!important;margin:9px 0 0!important;min-height:70px!important}
+#dailyLabDashboard .opm184-card-grid .opm153-card-metric strong{font:800 clamp(29px,3vw,42px)/1 "Segoe UI",Cairo,sans-serif!important;letter-spacing:-1.1px!important;color:var(--v181-ink)!important;margin:0!important;font-variant-numeric:tabular-nums!important;align-self:center;animation:opm184-value-in .47s both}
+#dailyLabDashboard .opm184-card-grid .opm153-card-metric small{font:600 11px/1.4 Cairo,"Segoe UI",sans-serif!important;color:var(--v181-muted)!important;margin-top:7px!important;align-self:center}
+#dailyLabDashboard .opm184-card-grid .opm153-card-foot{font:600 10px/1.55 Cairo,"Segoe UI",sans-serif!important;color:#586b78!important;display:flex!important;align-items:center!important;justify-content:center!important;min-height:29px!important;margin:auto 0 0!important;padding:5px 7px!important;border:0!important;border-radius:13px!important;background:color-mix(in srgb,var(--c) 8%,white)!important;white-space:normal!important;text-align:center!important}
+#dailyLabDashboard .opm184-card-grid .opm184-match-parts{box-sizing:border-box;display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;flex:none!important;margin:0 12px 12px!important;padding:8px 0 0!important;gap:0!important;border-top:1px solid var(--v181-edge)!important;min-height:56px!important}
+#dailyLabDashboard .opm184-match-parts .opm184-chip{border:0!important;border-inline-end:1px solid var(--v181-edge)!important;border-radius:0!important;display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:center!important;gap:2px!important;padding:0 2px!important;color:var(--v181-muted)!important;background:transparent!important;white-space:nowrap!important}
+#dailyLabDashboard .opm184-match-parts .opm184-chip:last-child{border-inline-end:0!important}
+#dailyLabDashboard .opm184-chip>span{font:600 clamp(8px,.75vw,10px)/1.5 Cairo,"Segoe UI",sans-serif!important}
+#dailyLabDashboard .opm184-chip>b{font:800 16px/1.2 "Segoe UI",Cairo,sans-serif!important;color:var(--v181-ink)!important;font-variant-numeric:tabular-nums!important}
+#dailyLabDashboard .opm184-card-grid .opm184-chip:hover{background:color-mix(in srgb,var(--c) 7%,transparent)!important;border-radius:8px!important}
+#dailyLabDashboard .opm184-card-grid .opm184-chip.is-selected{background:color-mix(in srgb,var(--c) 14%,transparent)!important;border-color:var(--c)!important}
+#dailyLabDashboard .opm184-card-grid .opm184-result-parts{flex:none!important;margin:0 11px 10px!important;border:0!important;padding:0!important}
+#dailyLabDashboard .opm184-result-parts .opm184-chip{display:flex!important;align-items:center!important;justify-content:center!important;flex-direction:row!important;gap:6px!important;border:0!important;border-radius:12px!important;background:#fff5e5!important;min-height:29px!important;padding:4px 7px!important;box-sizing:border-box!important}
+#dailyLabDashboard .opm184-result-parts .opm184-chip b{color:#9b6a24!important}
+#dailyLabDashboard .opm184-card-grid .opm184-main:focus-visible,#dailyLabDashboard .opm184-card-grid .opm184-chip:focus-visible,#dailyLabDashboard .opm184-overview-types button:focus-visible{outline:2px solid #007c75!important;outline-offset:-3px!important}
+@keyframes opm184-card-in{from{opacity:.65;transform:translateY(5px)}to{opacity:1;transform:translateY(0)}}
+@keyframes opm184-value-in{from{opacity:.45;transform:translateY(4px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:1160px){#dailyLabDashboard .opm184-overview{grid-template-columns:1fr 1fr!important;gap:10px!important}#dailyLabDashboard .opm184-overview-title{grid-column:1!important}#dailyLabDashboard .opm184-overview-types{grid-column:2!important;justify-self:end!important}#dailyLabDashboard .opm184-overview-info{grid-column:1/-1!important;justify-self:start!important;border:0!important;padding:0!important;flex-direction:row!important;flex-wrap:wrap!important}#dailyLabDashboard .opm153-status-host:has(.opm184-card-grid){overflow-x:auto!important;max-width:100%!important;scrollbar-width:thin!important}#dailyLabDashboard .opm184-card-grid{min-width:940px!important}}
+@media(max-width:650px){#dailyLabDashboard .opm184-overview{display:flex!important;flex-direction:column!important;align-items:stretch!important;gap:12px!important}#dailyLabDashboard .opm184-overview-types{align-self:flex-start!important}#dailyLabDashboard .opm184-overview-info{align-items:flex-start!important;flex-direction:column!important}#dailyLabDashboard .opm184-overview-title p{white-space:normal!important}#dailyLabDashboard .opm184-overview-types .gs40-type{padding:4px 10px!important;min-width:44px!important}#dailyLabDashboard .opm184-card-grid{min-width:940px!important}}
+html[data-theme=dark] #dailyLabDashboard .opm184-lab-comparison{--v181-ink:#e8f2f5;--v181-muted:#bac8ce;--v181-edge:#344a55;--v181-plate:#172a32;--v181-subtle:#1d353e}
+html[data-theme=dark] #dailyLabDashboard .opm184-card-grid article.opm184-status-card{background:linear-gradient(180deg,color-mix(in srgb,var(--c) 8%,var(--v181-plate)),var(--v181-plate) 56%)!important}
+html[data-theme=dark] #dailyLabDashboard .opm184-overview-title h3,html[data-theme=dark] #dailyLabDashboard .opm184-overview-info .lab58-showing b{color:var(--v181-ink)!important}
+html[data-theme=dark] #dailyLabDashboard .opm184-card-grid .opm153-card-metric strong,html[data-theme=dark] #dailyLabDashboard .opm184-chip>b{color:var(--v181-ink)!important}
+html[data-theme=dark] #dailyLabDashboard .opm184-overview-types .gs40-type{color:#deecf0!important;background:#1b3440!important;border-color:#436270!important}
+html[data-theme=dark] #dailyLabDashboard .opm184-overview-types .gs40-type.active{background:#148e86!important;color:#fff!important}
+html[data-theme=dark] #dailyLabDashboard .opm184-availability{background:#284653!important;color:#d0e0e4!important}
+html[data-theme=dark] #dailyLabDashboard .opm184-card-grid .opm153-card-foot{background:color-mix(in srgb,var(--c) 12%,var(--v181-plate))!important;color:#d3dfe4!important}
+html[data-theme=dark] #dailyLabDashboard .opm184-result-parts .opm184-chip{background:#463824!important;color:#f3ddba!important}
+@media(prefers-reduced-motion:reduce){#dailyLabDashboard .opm184-lab-comparison *,#dailyLabDashboard .opm184-lab-comparison *::before,#dailyLabDashboard .opm184-lab-comparison *::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+
+
+/* --------------------------------------------------------------------------
+  OPM V182 — harmonious dark page layout, presentation-only.
+  Never touch data handlers, counters, matching, lab source or refresh process.
+  Theme tokens come from the site's own design system.
+  The trace detail is intentionally not mounted by index.html.
+--------------------------------------------------------------------------- */
+#dailyLabDashboard .opm184-lab-comparison{
+  margin:0 0 12px!important;
+  padding:0 0 4px!important;
+}
+#dailyLabDashboard .opm184-overview{
+  min-height:64px!important;
+  margin:0 0 11px!important;
+  padding:0 7px!important;
+  gap:14px!important;
+  grid-template-columns:minmax(210px,1.13fr) minmax(226px,1fr) minmax(190px,.95fr)!important;
+}
+#dailyLabDashboard .opm184-overview-title{gap:9px!important}
+#dailyLabDashboard .opm184-title-mark{
+  width:33px!important;height:33px!important;border-radius:9px!important;
+}
+#dailyLabDashboard .opm184-overview-title h3{
+  font-size:clamp(15px,1.36vw,19px)!important;
+  font-weight:800!important;
+}
+#dailyLabDashboard .opm184-overview-title p{
+  font-size:clamp(10px,.86vw,11.3px)!important;
+}
+#dailyLabDashboard .opm184-overview-types .gs40-type{
+  height:31px!important;min-height:31px!important;min-width:43px!important;
+  padding:4px 11px!important;font-size:10.5px!important;
+}
+#dailyLabDashboard .opm184-overview-info{gap:3px!important;padding-inline-start:9px!important}
+#dailyLabDashboard .opm184-availability{padding:3px 8px!important;font-size:10px!important}
+#dailyLabDashboard .opm184-card-grid{
+  border-radius:15px!important;
+  box-shadow:0 3px 14px rgba(7,35,49,.055)!important;
+}
+#dailyLabDashboard .opm184-card-grid article.opm184-status-card{
+  min-height:202px!important;
+  animation-duration:.32s!important;
+}
+#dailyLabDashboard .opm184-card-grid article.opm184-status-card::before{height:3px!important}
+#dailyLabDashboard .opm184-card-grid .opm184-main{
+  padding:16px 10px 4px!important;
+  min-height:144px!important;
+}
+#dailyLabDashboard .opm184-card-heading{gap:7px!important;min-height:30px!important}
+#dailyLabDashboard .opm184-card-heading .opm153-card-title{
+  font-size:clamp(11px,1.05vw,13.6px)!important;
+  letter-spacing:0!important;
+}
+#dailyLabDashboard .opm184-icon{
+  width:27px!important;height:27px!important;min-width:27px!important;max-width:27px!important;
+  border-radius:8px!important;
+}
+#dailyLabDashboard .opm184-icon svg{width:17px!important;height:17px!important}
+#dailyLabDashboard .opm184-card-grid .opm153-card-metric{
+  min-height:66px!important;margin:6px 0 0!important;
+}
+#dailyLabDashboard .opm184-card-grid .opm153-card-metric strong{
+  font-size:clamp(30px,2.8vw,40px)!important;
+}
+#dailyLabDashboard .opm184-card-grid .opm153-card-metric small{
+  font-size:11px!important;margin-top:5px!important;
+}
+#dailyLabDashboard .opm184-card-grid .opm153-card-foot{
+  min-height:28px!important;padding:4px 7px!important;font-size:10.4px!important;
+}
+#dailyLabDashboard .opm184-card-grid .opm184-match-parts{
+  min-height:53px!important;margin:0 9px 10px!important;padding-top:7px!important;
+}
+#dailyLabDashboard .opm184-chip>span{font-size:clamp(9px,.79vw,10.4px)!important}
+#dailyLabDashboard .opm184-chip>b{font-size:15px!important}
+#dailyLabDashboard .opm184-result-parts .opm184-chip{
+  min-height:28px!important;font-size:10.2px!important;
+}
+#dailyLabDashboard .opm-lab-identity-badge{
+  max-width:100%;padding:0 5px;border:1px solid var(--border,#c7d8de);
+  border-radius:4px;background:var(--surface-2,#f1f6f8);color:var(--ink,#203542);
+  font:inherit;line-height:1.4;white-space:nowrap;cursor:pointer;
+}
+/* In dark mode borrow precisely the page's native surface, border and text values. */
+html[data-theme="dark"] #dailyLabDashboard .opm184-lab-comparison{
+  --v181-ink:var(--ink,#e6eef3);
+  --v181-muted:var(--muted,#93a5b4);
+  --v181-edge:var(--border,#203241);
+  --v181-plate:var(--surface,#0f1c26);
+  --v181-subtle:var(--surface-2,#13222e);
+  --v181-teal:var(--brand,#3cc5b6);
+  color:var(--ink)!important;
+}
+html[data-theme="dark"] #dailyLabDashboard .opm184-card-grid{
+  background:var(--surface,#0f1c26)!important;
+  border-color:var(--border,#203241)!important;
+  box-shadow:0 2px 8px rgba(0,0,0,.10)!important;
+}
+html[data-theme="dark"] #dailyLabDashboard .opm184-card-grid article.opm184-status-card{
+  background:linear-gradient(180deg,color-mix(in srgb,var(--c) 5%,var(--surface,#0f1c26)) 0%,var(--surface,#0f1c26) 72%)!important;
+  border-color:var(--border,#203241)!important;
+}
+html[data-theme="dark"] #dailyLabDashboard .opm184-card-grid article.opm184-status-card:hover{
+  background:linear-gradient(180deg,color-mix(in srgb,var(--c) 11%,var(--surface,#0f1c26)),var(--surface-2,#13222e) 100%)!important;
+  box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--c) 38%,transparent)!important;
+}
+html[data-theme="dark"] #dailyLabDashboard .opm184-card-grid article.opm184-status-card.is-selected{
+  background:linear-gradient(180deg,color-mix(in srgb,var(--c) 10%,var(--surface,#0f1c26)),var(--surface-2,#13222e) 100%)!important;
+  box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--c) 48%,transparent)!important;
+}
+html[data-theme="dark"] #dailyLabDashboard .opm184-overview-title h3,
+html[data-theme="dark"] #dailyLabDashboard .opm184-card-heading .opm153-card-title,
+html[data-theme="dark"] #dailyLabDashboard .opm184-card-grid .opm153-card-metric strong,
+html[data-theme="dark"] #dailyLabDashboard .opm184-chip>b,
+html[data-theme="dark"] #dailyLabDashboard .opm184-overview-info .lab58-showing b{
+  color:var(--ink,#e6eef3)!important;
+}
+html[data-theme="dark"] #dailyLabDashboard .opm184-overview-title p,
+html[data-theme="dark"] #dailyLabDashboard .opm184-overview-info .lab58-showing,
+html[data-theme="dark"] #dailyLabDashboard .opm184-card-grid .opm153-card-metric small,
+html[data-theme="dark"] #dailyLabDashboard .opm184-chip>span{
+  color:var(--muted,#93a5b4)!important;
+}
+html[data-theme="dark"] #dailyLabDashboard .opm184-overview-info{
+  border-color:var(--border,#203241)!important;
+}
+html[data-theme="dark"] #dailyLabDashboard .opm184-availability{
+  background:var(--surface-3,#182a38)!important;
+  color:var(--ink-2,#c2d0da)!important;
+}
+html[data-theme="dark"] #dailyLabDashboard .opm184-info-dot{
+  box-shadow:0 0 0 2px rgba(60,197,182,.12)!important;
+}
+html[data-theme="dark"] #dailyLabDashboard .opm184-overview-types .gs40-type{
+  background:var(--surface-2,#13222e)!important;
+  border-color:var(--border-2,#2b4153)!important;
+  color:var(--ink-2,#c2d0da)!important;
+}
+html[data-theme="dark"] #dailyLabDashboard .opm184-overview-types .gs40-type:hover{
+  background:var(--surface-3,#182a38)!important;
+  border-color:var(--brand,#3cc5b6)!important;
+}
+html[data-theme="dark"] #dailyLabDashboard .opm184-overview-types .gs40-type.active{
+  background:color-mix(in srgb,var(--brand,#3cc5b6) 31%,var(--surface-2,#13222e))!important;
+  border-color:var(--brand,#3cc5b6)!important;
+  color:#ecfffb!important;
+  box-shadow:none!important;
+}
+html[data-theme="dark"] #dailyLabDashboard .opm184-icon{
+  background:color-mix(in srgb,var(--c) 15%,var(--surface-2,#13222e))!important;
+  color:color-mix(in srgb,var(--c) 70%,white)!important;
+}
+html[data-theme="dark"] #dailyLabDashboard .opm184-card-grid .opm153-card-foot{
+  color:var(--ink-2,#c2d0da)!important;
+  background:color-mix(in srgb,var(--c) 9%,var(--surface-2,#13222e))!important;
+}
+html[data-theme="dark"] #dailyLabDashboard .opm184-match-parts,
+html[data-theme="dark"] #dailyLabDashboard .opm184-match-parts .opm184-chip{
+  border-color:var(--border,#203241)!important;
+}
+html[data-theme="dark"] #dailyLabDashboard .opm184-result-parts .opm184-chip{
+  background:color-mix(in srgb,#e8b25e 10%,var(--surface-2,#13222e))!important;
+  color:var(--ink-2,#c2d0da)!important;
+}
+html[data-theme="dark"] #dailyLabDashboard .opm184-result-parts .opm184-chip b{
+  color:#f3c679!important;
+}
+/* Keep one horizontal row while allowing swipe/scroll on narrow viewports. */
+@media(max-width:1160px){
+ #dailyLabDashboard .opm184-overview{grid-template-columns:1fr 1fr!important}
+ #dailyLabDashboard .opm184-card-grid{min-width:900px!important}
+}
+@media(max-width:650px){
+ #dailyLabDashboard .opm184-overview{display:flex!important;flex-direction:column!important;align-items:stretch!important}
+ #dailyLabDashboard .opm184-overview-types{align-self:flex-start!important}
+ #dailyLabDashboard .opm184-card-grid{min-width:900px!important}
+}
+@media(prefers-reduced-motion:reduce){
+ #dailyLabDashboard .opm184-card-grid article.opm184-status-card{animation:none!important}
+}
+
+/* Source dates and cross-branch lab scope. */
+#dailyLabDashboard .opm-lab-source-counts{display:grid;gap:2px;line-height:1.45;white-space:nowrap}
+#dailyLabDashboard .opm-lab-source-counts b{font-size:inherit;color:inherit}
+#dailyLabDashboard .opm-lab-family-filter select{min-width:145px;max-width:210px}
+#dailyLabDashboard .opm-lab-count-context{font-size:11px;line-height:1.7;color:var(--muted,#829dad);margin:9px 0 12px}
+@media(max-width:600px){#dailyLabDashboard .opm-lab-family-filter{flex:1 1 180px}#dailyLabDashboard .opm-lab-family-filter select{flex:1;max-width:100%}}
+
+#dailyLabDashboard .lab135-date-range{flex:0 1 auto!important;max-width:370px!important;padding:4px 7px!important;gap:5px!important}
+#dailyLabDashboard .lab135-date-range input{width:116px!important;min-width:0!important;padding:3px!important}
+#dailyLabDashboard .lab135-range-title{display:none!important}
+#dailyLabDashboard .lab131-calendar-toolbar{gap:7px!important}
+#dailyLabDashboard .opm-lab-family-buttons{display:flex;gap:4px;flex-wrap:wrap}
+#dailyLabDashboard .opm-lab-family-buttons button,#dailyLabDashboard #opmCalendarMode{font:inherit;font-size:10px;padding:5px 9px;border:1px solid var(--border);border-radius:7px;background:var(--surface);color:var(--ink);cursor:pointer;white-space:nowrap}
+#dailyLabDashboard .opm-lab-family-buttons button[aria-pressed=true],#dailyLabDashboard #opmCalendarMode[aria-pressed=true]{border-color:var(--brand);color:var(--brand);background:var(--brand-soft)}
+#dailyLabDashboard .opm-lab-source-counts{font-size:9px!important;gap:0!important}
+#dailyLabDashboard .opm-workdays-list>button{padding:7px 6px!important;gap:2px!important}
+#dailyLabDashboard .opm-workdays-list>button strong{font-size:17px!important}
+#opm-other-sites-popover{max-height:225px!important;overflow-y:auto!important;min-width:145px!important;max-width:210px!important}
+#opm-other-sites-popover button{padding:5px 9px!important;font-size:11px!important}
+@media(max-width:600px){#dailyLabDashboard .lab135-date-range{max-width:100%!important}#dailyLabDashboard .lab135-date-range input{width:110px!important}}
+
+/* One compact toolbar with explicitly scoped layout, independent of legacy flex rules. */
+#dailyLabDashboard .lab131-calendar{min-height:0!important}
+#dailyLabDashboard .opm-lab-toolbar-v2{display:grid!important;grid-template-columns:minmax(0,1fr) auto!important;align-items:center!important;gap:8px 12px!important;margin:0 0 10px!important;padding:0!important}
+#dailyLabDashboard .opm-lab-toolbar-scope,#dailyLabDashboard .opm-lab-toolbar-period{display:flex!important;flex-direction:row!important;align-items:center!important;flex-wrap:wrap!important;gap:6px!important;margin:0!important;padding:0!important;min-width:0!important}
+#dailyLabDashboard .opm-lab-toolbar-period{justify-content:flex-end!important}
+#dailyLabDashboard .opm-lab-toolbar-v2 label{display:flex!important;align-items:center!important;gap:4px!important;font-size:10px!important;white-space:nowrap!important;margin:0!important}
+#dailyLabDashboard .opm-lab-toolbar-v2 select,#dailyLabDashboard .opm-lab-toolbar-v2 input,#dailyLabDashboard .opm-lab-toolbar-v2 button{height:32px!important;min-height:32px!important;font-family:inherit!important;font-size:10px!important;border:1px solid var(--border)!important;border-radius:7px!important;background:var(--surface)!important;color:var(--ink)!important;margin:0!important;padding:4px 7px!important;box-sizing:border-box!important}
+#dailyLabDashboard .opm-lab-toolbar-v2 #mohLabFamily{width:152px!important;min-width:0!important}
+#dailyLabDashboard .opm-lab-toolbar-v2 #opmWorkMonth{width:112px!important;min-width:0!important}
+#dailyLabDashboard .opm-lab-toolbar-v2 input{width:113px!important;min-width:0!important}
+#dailyLabDashboard .opm-lab-toolbar-v2 .opm-v76-presets{display:flex!important;gap:4px!important;flex-wrap:wrap!important;margin:0!important}
+#dailyLabDashboard .opm-lab-toolbar-v2 #opmCalendarMode[aria-pressed=true]{border-color:var(--brand)!important;color:var(--brand)!important}
+@media(max-width:1150px){#dailyLabDashboard .opm-lab-toolbar-v2{grid-template-columns:1fr!important}#dailyLabDashboard .opm-lab-toolbar-period{justify-content:flex-start!important}}
+#dailyLabDashboard .opm-lab-toolbar-v2 label{color:#bfd5e2!important}
+#dailyLabDashboard .lab131-calendar .opm-workdays-list>button{color:#c9dce7!important}
+#dailyLabDashboard .lab131-calendar .opm-workdays-list>button strong{color:inherit!important}
+#dailyLabDashboard .lab131-calendar .opm-workdays-list>button[aria-pressed=true]{color:#27d6cb!important}

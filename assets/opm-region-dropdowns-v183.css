@@ -1,0 +1,49 @@
+/* OPM V183: compact region popovers. Presentation only; no filtering/state changes. */
+#opm-town-popover,
+#opm-other-sites-popover {
+  padding: 4px !important;
+  border-radius: 9px !important;
+  box-shadow: 0 8px 22px rgba(1,14,20,.2) !important;
+  overflow-x: hidden !important;
+  overscroll-behavior: contain;
+}
+#opm-town-popover { max-width: calc(100vw - 20px); }
+#opm-other-sites-popover {
+  max-width: calc(100vw - 20px);
+  max-height: min(300px, calc(100vh - 24px)) !important;
+  overflow-y: auto !important;
+  scrollbar-width: thin;
+  scrollbar-color: var(--border,#516673) transparent;
+}
+#opm-town-popover button,
+#opm-other-sites-popover button {
+  min-height: 31px !important;
+  padding: 5px 8px !important;
+  line-height: 1.35 !important;
+  font-size: 11px !important;
+  border-radius: 6px !important;
+  gap: 5px !important;
+}
+#opm-other-sites-popover button {
+  white-space: normal !important;
+  overflow-wrap: anywhere !important;
+  text-align: right !important;
+}
+/* Do not shift the page down by 158px merely because a dropdown is open. */
+#initiativeSwitcher:has(#regionalSwitcher [aria-expanded="true"]) {
+  padding-bottom: 0 !important;
+  transition: none !important;
+}
+
+/* Task 3: arrow-only popovers. Enlarge only the arrow hit target without affecting region-label selection. */
+#regionalSwitcher .regional-choice[data-region="بنها_قليوب"] > .opm-town-caret,
+#regionalSwitcher .regional-choice[data-region="باقي_المواقع"] > .opm-town-caret {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 25px;
+  min-height: 28px;
+  padding: 5px;
+  box-sizing: border-box;
+  cursor: pointer;
+}
