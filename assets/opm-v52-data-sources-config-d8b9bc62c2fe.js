@@ -1,0 +1,1 @@
+window.CHRONIC_API_URL=window.CHRONIC_API_URL||window.OPM_CONFIG.chronic,window.OPM_GATEWAY_URL=window.OPM_GATEWAY_URL||window.OPM_CONFIG.gateway;

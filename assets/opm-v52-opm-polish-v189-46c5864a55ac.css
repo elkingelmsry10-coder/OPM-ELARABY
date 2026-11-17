@@ -1,0 +1,18 @@
+:is(#fit,#psa) .opm189-result-rule{font-size:9px;color:var(--muted);margin:0 8px 5px;position:relative;text-align:center;max-width:100%}
+:is(#fit,#psa) .opm189-result-rule summary{cursor:pointer;padding:2px 4px;list-style:none;font-weight:650}
+:is(#fit,#psa) .opm189-result-rule summary:after{content:' ⓘ';color:var(--brand)}
+:is(#fit,#psa) .opm189-result-rule p{font-size:10px;line-height:1.9;margin:6px 0;color:var(--ink);padding:7px;background:var(--surface-2);border-radius:6px}
+:is(#fit,#psa) .opm189-result-reason{display:block;max-width:220px;color:var(--muted);font-size:9px;line-height:1.7;margin-top:4px;white-space:normal}
+#clinicalFollowup .opm189-clinical-unit{min-width:0;display:flex;flex-direction:column;border:1px solid var(--border);border-radius:15px;overflow:hidden;background:var(--surface)}
+#clinicalFollowup .opm189-clinical-unit>.fx-card{border:0!important;border-radius:0!important;box-shadow:none!important;flex:1;min-height:165px}
+#clinicalFollowup .opm189-clinical-unit[data-clinical-unit=scope]{--opm175-accent:#32c7a1;--opm175-rgb:50,199,161}
+#clinicalFollowup .opm189-clinical-unit[data-clinical-unit=prostate]{--opm175-accent:#ab91e8;--opm175-rgb:171,145,232}
+#clinicalFollowup .opm189-clinical-unit:has(>.fx-card.active){border-color:var(--opm175-accent);box-shadow:0 0 0 1px rgba(var(--opm175-rgb),.15)}
+#clinicalFollowup .opm189-clinical-unit>.fx-card:hover{transform:none!important}
+#clinicalFollowup .opm189-clinical-routes{display:grid;grid-template-columns:1fr 1fr;gap:4px;padding:5px 6px 7px;border-top:1px solid var(--border);background:var(--surface-2)}
+#clinicalFollowup .opm189-clinical-routes>button{min-width:0;min-height:40px;padding:3px 2px!important;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;font-family:inherit;color:var(--ink);background:transparent;border:1px solid transparent;border-radius:6px;box-shadow:none;cursor:pointer}
+#clinicalFollowup .opm189-clinical-routes span{font-size:9px;line-height:1.5;white-space:normal}
+#clinicalFollowup .opm189-clinical-routes b{font-size:15px;font-variant-numeric:tabular-nums;line-height:1.3}
+#clinicalFollowup .opm189-clinical-routes>button[aria-pressed=true]{background:var(--brand-tint);color:var(--brand-ink);border-color:var(--brand)}
+#clinicalFollowup .opm189-clinical-routes>button:focus-visible{outline:2px solid var(--brand);outline-offset:-2px}
+#clinicalFollowup .cl44-scroll th:last-child,#clinicalFollowup .cl44-scroll td:last-child{white-space:normal;min-width:190px;max-width:270px;line-height:1.8}

@@ -1,0 +1,1 @@
+window.__debounce=function(n,t){var u=null;return function(){var i=arguments,e=this;clearTimeout(u),u=setTimeout(function(){n.apply(e,i)},t||150)}},window.__rafCoalesce=function(n){var t=!1,u=null,i=null;return function(){u=arguments,i=this,t||(t=!0,requestAnimationFrame(function(){t=!1,n.apply(i,u)}))}};
